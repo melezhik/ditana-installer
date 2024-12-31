@@ -1,0 +1,52 @@
+diff --git a/airootfs/root/bind-mount/root/enable-ditana.sh b/airootfs/root/bind-mount/root/enable-ditana.sh
+index 6cda400..ab1bd18 100755
+--- a/airootfs/root/bind-mount/root/enable-ditana.sh
++++ b/airootfs/root/bind-mount/root/enable-ditana.sh
+@@ -21,7 +21,7 @@
+ 
+ cat <<EOF >>/etc/pacman.conf
+ [ditana]
+-Include = /etc/pacman.d/ditana-mirrorlist
++Include = /etc/pacman.d/ditana-testing-mirrorlist
+ EOF
+ 
+ # package 'ditana-filesystem' replaces base package 'filesystem'
+diff --git a/packages.x86_64 b/packages.x86_64
+index c3b62ca..5fb48b6 100644
+--- a/packages.x86_64
++++ b/packages.x86_64
+@@ -20,7 +20,7 @@ dhclient
+ dhcpcd
+ dialog
+ diffutils
+-ditana-mirrorlist
++ditana-testing-mirrorlist
+ dmidecode
+ dmraid
+ dnsmasq
+diff --git a/pacman.conf b/pacman.conf
+index cb2a418..1b240a5 100644
+--- a/pacman.conf
++++ b/pacman.conf
+@@ -95,7 +95,7 @@ Include = /etc/pacman.d/mirrorlist
+ Include = /etc/pacman.d/chaotic-mirrorlist
+
+ [ditana]
+-Include = /etc/pacman.d/ditana-mirrorlist
++Include = /etc/pacman.d/ditana-testing-mirrorlist
+
+ # An example of a custom package repository.  See the pacman manpage for
+ # tips on creating your own repositories.
+diff --git a/profiledef.sh b/profiledef.sh
+index d80b2f9..19695e7 100644
+--- a/profiledef.sh
++++ b/profiledef.sh
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env bash
+ # shellcheck disable=SC2034
+
+-iso_name="Ditana"
++iso_name="Ditana_Testing"
+ iso_label="Ditana_$DITANA_VERSION"
+ iso_publisher="Ditana GNU/Linux <https://ditana.org>"
+ iso_application="Ditana GNU/Linux Install/Rescue System"

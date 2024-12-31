@@ -1,0 +1,10 @@
+.precomp
+.idea
+out
+airootfs/root/ditana-version.sh
+airootfs/root/.raku
+airootfs/root/folders/etc/sysctl.d/ditana.conf
+airootfs/root/folders/etc/skel/.config/ditana/dpi/value
+airootfs/root/folders/etc/xdg/ditana/default_locale_description
+airootfs/root/bind-mount/root/installation-steps.sh
+airootfs/root/bind-mount/root/settings.sh
