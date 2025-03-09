@@ -1,0 +1,133 @@
+[35m19:20:33[0m :: [repository] - index updated from https://sparrowhub.io/repo/api/v1/index
+[1;36m[task run: task.bash - bash: run ansible][0m
+[1;36m[task stdout][0m
+[35m19:20:36[0m :: 
+[35m19:20:36[0m :: PLAY [localhost] ***************************************************************
+[35m19:20:36[0m :: 
+[35m19:20:36[0m :: TASK [Gathering Facts] *********************************************************
+[35m19:20:37[0m :: ok: [localhost]
+[35m19:20:37[0m :: 
+[35m19:20:37[0m :: TASK [Enable Arch multilib repo if enable_multilib is y] ***********************
+[35m19:20:37[0m :: changed: [localhost]
+[35m19:20:37[0m :: 
+[35m19:20:37[0m :: PLAY RECAP *********************************************************************
+[35m19:20:37[0m :: localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+[35m19:20:37[0m :: 
+[1;36m[task stderr][0m
+[35m19:20:37[0m :: [WARNING]: Platform darwin on host localhost is using the discovered Python
+[35m19:20:37[0m :: interpreter at /Users/alex/homebrew/bin/python3.10, but future installation of
+[35m19:20:37[0m :: another Python interpreter could change the meaning of that path. See
+[35m19:20:37[0m :: https://docs.ansible.com/ansible-
+[35m19:20:37[0m :: core/2.13/reference_appendices/interpreter_discovery.html for more information.
+[1;36m[task run: task.bash - tasks/arch-multilib-repo-is-enabled][0m
+[1;36m[task stdout][0m
+[35m19:20:38[0m :: #
+[35m19:20:38[0m :: # /etc/pacman.conf
+[35m19:20:38[0m :: #
+[35m19:20:38[0m :: # See the pacman.conf(5) manpage for option and repository directives
+[35m19:20:38[0m :: 
+[35m19:20:38[0m :: #
+[35m19:20:38[0m :: # GENERAL OPTIONS
+[35m19:20:38[0m :: #
+[35m19:20:38[0m :: [options]
+[35m19:20:38[0m :: # The following paths are commented out with their default values listed.
+[35m19:20:38[0m :: # If you wish to use different paths, uncomment and update the paths.
+[35m19:20:38[0m :: #RootDir     = /
+[35m19:20:38[0m :: #DBPath      = /var/lib/pacman/
+[35m19:20:38[0m :: #CacheDir    = /var/cache/pacman/pkg/
+[35m19:20:38[0m :: #LogFile     = /var/log/pacman.log
+[35m19:20:38[0m :: #GPGDir      = /etc/pacman.d/gnupg/
+[35m19:20:38[0m :: #HookDir     = /etc/pacman.d/hooks/
+[35m19:20:38[0m :: HoldPkg     = pacman glibc
+[35m19:20:38[0m :: #XferCommand = /usr/bin/curl -L -C - -f -o %o %u
+[35m19:20:38[0m :: #XferCommand = /usr/bin/wget --passive-ftp -c -O %o %u
+[35m19:20:38[0m :: #CleanMethod = KeepInstalled
+[35m19:20:38[0m :: Architecture = auto
+[35m19:20:38[0m :: 
+[35m19:20:38[0m :: # Pacman won't upgrade packages listed in IgnorePkg and members of IgnoreGroup
+[35m19:20:38[0m :: #IgnorePkg   =
+[35m19:20:38[0m :: #IgnoreGroup =
+[35m19:20:38[0m :: 
+[35m19:20:38[0m :: #NoUpgrade   =
+[35m19:20:38[0m :: #NoExtract   =
+[35m19:20:38[0m :: 
+[35m19:20:38[0m :: # Misc options
+[35m19:20:38[0m :: #UseSyslog
+[35m19:20:38[0m :: #Color
+[35m19:20:38[0m :: #NoProgressBar
+[35m19:20:38[0m :: # We cannot check disk space from within a chroot environment
+[35m19:20:38[0m :: #CheckSpace
+[35m19:20:38[0m :: #VerbosePkgLists
+[35m19:20:38[0m :: ParallelDownloads = 5
+[35m19:20:38[0m :: DownloadUser = alpm
+[35m19:20:38[0m :: #DisableSandbox
+[35m19:20:38[0m :: 
+[35m19:20:38[0m :: # By default, pacman accepts packages signed by keys that its local keyring
+[35m19:20:38[0m :: # trusts (see pacman-key and its man page), as well as unsigned packages.
+[35m19:20:38[0m :: SigLevel    = Required DatabaseOptional
+[35m19:20:38[0m :: LocalFileSigLevel = Optional
+[35m19:20:38[0m :: #RemoteFileSigLevel = Required
+[35m19:20:38[0m :: 
+[35m19:20:38[0m :: # NOTE: You must run `pacman-key --init` before first using pacman; the local
+[35m19:20:38[0m :: # keyring can then be populated with the keys of all official Arch Linux
+[35m19:20:38[0m :: # packagers with `pacman-key --populate archlinux`.
+[35m19:20:38[0m :: 
+[35m19:20:38[0m :: #
+[35m19:20:38[0m :: # REPOSITORIES
+[35m19:20:38[0m :: #   - can be defined here or included from another file
+[35m19:20:38[0m :: #   - pacman will search repositories in the order defined here
+[35m19:20:38[0m :: #   - local/custom mirrors can be added here or in separate files
+[35m19:20:38[0m :: #   - repositories listed first will take precedence when packages
+[35m19:20:38[0m :: #     have identical names, regardless of version number
+[35m19:20:38[0m :: #   - URLs will have $repo replaced by the name of the current repo
+[35m19:20:38[0m :: #   - URLs will have $arch replaced by the name of the architecture
+[35m19:20:38[0m :: #
+[35m19:20:38[0m :: # Repository entries are of the format:
+[35m19:20:38[0m :: #       [repo-name]
+[35m19:20:38[0m :: #       Server = ServerName
+[35m19:20:38[0m :: #       Include = IncludePath
+[35m19:20:38[0m :: #
+[35m19:20:38[0m :: # The header [repo-name] is crucial - it must be present and
+[35m19:20:38[0m :: # uncommented to enable the repo.
+[35m19:20:38[0m :: #
+[35m19:20:38[0m :: 
+[35m19:20:38[0m :: # The testing repositories are disabled by default. To enable, uncomment the
+[35m19:20:38[0m :: # repo name header and Include lines. You can add preferred servers immediately
+[35m19:20:38[0m :: # after the header, and they will be used before the default mirrors.
+[35m19:20:38[0m :: 
+[35m19:20:38[0m :: #[core-testing]
+[35m19:20:38[0m :: #Include = /etc/pacman.d/mirrorlist
+[35m19:20:38[0m :: 
+[35m19:20:38[0m :: [core]
+[35m19:20:38[0m :: Include = /etc/pacman.d/mirrorlist
+[35m19:20:38[0m :: 
+[35m19:20:38[0m :: #[extra-testing]
+[35m19:20:38[0m :: #Include = /etc/pacman.d/mirrorlist
+[35m19:20:38[0m :: 
+[35m19:20:38[0m :: [extra]
+[35m19:20:38[0m :: Include = /etc/pacman.d/mirrorlist
+[35m19:20:38[0m :: 
+[35m19:20:38[0m :: # If you want to run 32 bit applications on your x86_64 system,
+[35m19:20:38[0m :: # enable the multilib repositories as required here.
+[35m19:20:38[0m :: 
+[35m19:20:38[0m :: #[multilib-testing]
+[35m19:20:38[0m :: #Include = /etc/pacman.d/mirrorlist
+[35m19:20:38[0m :: 
+[35m19:20:38[0m :: [multilib]
+[35m19:20:38[0m :: Include = /etc/pacman.d/mirrorlist
+[35m19:20:38[0m :: 
+[35m19:20:38[0m :: [chaotic-aur]
+[35m19:20:38[0m :: Include = /etc/pacman.d/chaotic-mirrorlist
+[35m19:20:38[0m :: 
+[35m19:20:38[0m :: [ditana]
+[35m19:20:38[0m :: Include = /etc/pacman.d/ditana-mirrorlist
+[35m19:20:38[0m :: 
+[35m19:20:38[0m :: # An example of a custom package repository.  See the pacman manpage for
+[35m19:20:38[0m :: # tips on creating your own repositories.
+[35m19:20:38[0m :: #[custom]
+[35m19:20:38[0m :: #SigLevel = Optional TrustAll
+[35m19:20:38[0m :: #Server = file:///home/custompkgs
+[1;36m[task check][0m
+[33m# /etc/pacman.d/mirrorlist should be disabled[0m
+stdout match (s) <^^ \s* "[multilib]" \s* $$> [36mTrue[0m
+stdout match (s) <^^ \s* "Include" \s+ "=" \s+ "/etc/pacman.d/mirrorlist" \s* $$> [36mTrue[0m
