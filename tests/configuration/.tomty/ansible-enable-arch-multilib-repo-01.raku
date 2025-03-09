@@ -8,6 +8,6 @@ bash q:to /CODE/, %( :description<run ansible> );
   -e "enable_multilib=y config_path=/tmp/pacman.conf"
 CODE
 
-task-run "tasks/enable-arch-multilib-repo", %(
+task-run "tasks/arch-multilib-repo-is-enabled", %(
   :path</tmp/pacman.conf>,
 );
