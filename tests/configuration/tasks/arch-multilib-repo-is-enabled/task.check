@@ -1,4 +1,4 @@
-note: /etc/pacman.d/mirrorlist should be disabled
+note: /etc/pacman.d/mirrorlist should be enabled
 begin:
 regexp: ^^ \s* "[multilib]" \s* $$
 regexp: ^^ \s* "Include" \s+ "=" \s+ "/etc/pacman.d/mirrorlist" \s* $$
